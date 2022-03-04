@@ -71,7 +71,7 @@ plt.savefig("output.jpg")
 
 #Streamlit GUI starts from here
 a=st.sidebar.radio('Navigation',['Farm Information','Farmer Data'])
-df = pd.read_csv("Trebirth.csv")
+# df = pd.read_csv("Trebirth.csv")
 
 if a == "Farm Information":
  st.header("Welcome to Trebirth Tech Development")
