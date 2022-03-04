@@ -20,8 +20,8 @@ import json
 # result = response['Body'].read()
 # print("Result is",result)
 #retrieve json file from firebase
-firebase = firebase.FirebaseApplication('https://tribirth-f4422-default-rtdb.firebaseio.com/',None)
-result = firebase.get("Value","")
+firebase = firebase.FirebaseApplication('https://esp32-d544d-default-rtdb.firebaseio.com/',None)
+result = firebase.get("test","sensor")
 
 jtopy=json.dumps(result)       #json.dumps take a dictionary as input and returns a string as output.
 dict_json=json.loads(jtopy)    # json.loads take a string as input and returns a dictionary as output.
