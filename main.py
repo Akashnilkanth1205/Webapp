@@ -22,6 +22,8 @@ import json
 #retrieve json file from firebase
 firebase = firebase.FirebaseApplication('https://esp32-d544d-default-rtdb.firebaseio.com/',None)
 result = firebase.get("test","sensor")
+result1 = firebase.get("test","scan number")
+
 
 jtopy=json.dumps(result)       #json.dumps take a dictionary as input and returns a string as output.
 dict_json=json.loads(jtopy)    # json.loads take a string as input and returns a dictionary as output.
@@ -97,6 +99,9 @@ if a == "Farm Information":
  df.to_csv("Trebirth.csv",index=False)
 st.dataframe(df)
 st.print(Filtered_data)
+st.print(result1)
+
+
 
 
  @st.cache
