@@ -100,8 +100,7 @@ if a == "Farm Information":
 st.dataframe(df)
 st.print(Filtered_data)
 st.print(result1)
- 
- @st.cache
+@st.cache
  def convert_df(df):
      return df.to_csv().encode('utf-8')
 
