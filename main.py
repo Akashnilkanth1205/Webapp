@@ -95,11 +95,8 @@ if a == "Farm Information":
  #st.write(new_data)
  df = df._append(new_data,ignore_index=True)
  df.to_csv("Trebirth.csv",index=False)
-
-
-
-
- st.dataframe(df)
+st.dataframe(df)
+st.print(Filtered_data)
 
 
  @st.cache
