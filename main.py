@@ -101,13 +101,11 @@ st.dataframe(df)
 st.print(Filtered_data)
 st.print(result1)
 @st.cache
- def convert_df(df):
-     return df.to_csv().encode('utf-8')
+def convert_df(df):
+ return df.to_csv().encode('utf-8')
+csv = convert_df(df)
 
-
- csv = convert_df(df)
-
- st.download_button(
+st.download_button(
      "Press to Download",
      csv,
      "file.csv",
