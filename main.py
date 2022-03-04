@@ -89,6 +89,7 @@ if a == "Farm Information":
   )
 
  st.line_chart(Filtered_data)
+ st.write("Scan number is ", result1)
 
 
  if submit_button:
@@ -98,8 +99,8 @@ if a == "Farm Information":
  df = df._append(new_data,ignore_index=True)
  df.to_csv("Trebirth.csv",index=False)
 st.dataframe(df)
-st.write(Filtered_data)
-st.write(result1)
+
+
 @st.cache
 def convert_df(df):
  return df.to_csv().encode('utf-8')
