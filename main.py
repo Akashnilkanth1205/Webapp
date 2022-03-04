@@ -23,6 +23,10 @@ import json
 firebase = firebase.FirebaseApplication('https://esp32-d544d-default-rtdb.firebaseio.com/',None)
 result = firebase.get("test","sensor")
 result1 = firebase.get("test","scan_number")
+Np_result = np.array(result)
+df = pd.DataFrame(Np_result)
+df.to_csv( "scan.csv")
+
 
 
 jtopy=json.dumps(result)       #json.dumps take a dictionary as input and returns a string as output.
@@ -71,34 +75,35 @@ df = pd.read_csv("Trebirth.csv")
 
 if a == "Farm Information":
  st.header("Welcome to Trebirth Tech Development")
- form = st.form(key='my_form',clear_on_submit=True)
- F_name= form.text_input(label='Enter Farmer Name')
- F_health= form.text_input(label='Enter Farm Health')
- Number= form.number_input(label='Enter No. of trees scanned')
- Remark = form.text_area(label='Remark')
- submit_button = form.form_submit_button(label='Submit')
+#  form = st.form(key='my_form',clear_on_submit=True)
+#  F_name= form.text_input(label='Enter Farmer Name')
+#  F_health= form.text_input(label='Enter Farm Health')
+#  Number= form.number_input(label='Enter No. of trees scanned')
+#  Remark = form.text_area(label='Remark')
+#  submit_button = form.form_submit_button(label='Submit')
 
 
- st.sidebar.markdown(
-    f"""
-     * Farmer name :        {F_name}
-     * Farm health :        {F_health}
-     * No of trees scanned: {Number}
-     * Remark      :        {Remark}
- """
-  )
+#  st.sidebar.markdown(
+#     f"""
+#      * Farmer name :        {F_name}
+#      * Farm health :        {F_health}
+#      * No of trees scanned: {Number}
+#      * Remark      :        {Remark}
+#  """
+#   )
 
  st.line_chart(Filtered_data)
- st.write("Scan number is ", result1)
+ st.write(df)
+#  st.write("Scan number is ", result1)
 
 
- if submit_button:
-     st.write(F_name,F_health,Number,Remark)
- new_data = {"Farmer_Name": F_name,"Farm_Health": F_health,"Trees_Scanned": int(Number),"Remark": Remark}
- #st.write(new_data)
- df = df._append(new_data,ignore_index=True)
- df.to_csv("Trebirth.csv",index=False)
-st.dataframe(df)
+#  if submit_button:
+#      st.write(F_name,F_health,Number,Remark)
+#  new_data = {"Farmer_Name": F_name,"Farm_Health": F_health,"Trees_Scanned": int(Number),"Remark": Remark}
+#  #st.write(new_data)
+#  df = df._append(new_data,ignore_index=True)
+#  df.to_csv("Trebirth.csv",index=False)
+# st.dataframe(df)
 
 
 @st.cache
