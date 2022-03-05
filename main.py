@@ -93,8 +93,8 @@ if a == "Farm Information":
 #   )
 
  st.write("Scan number is ", result1)
- #st.line_chart(Filtered_data)
- st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
+ st.line_chart(Filtered_data)
+ #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
 
 
