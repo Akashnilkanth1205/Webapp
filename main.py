@@ -94,7 +94,7 @@ if a == "Farm Information":
 
  st.line_chart(Filtered_data)
  st.write(df)
-#  st.write("Scan number is ", result1)
+  st.write.subheader("Scan number is ", result1)
 
 
 #  if submit_button:
