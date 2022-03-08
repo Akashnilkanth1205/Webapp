@@ -47,7 +47,7 @@ def Apply_Filter(sig):
 
 
 def Plot_Graph(filtered):
-   t = np.linspace(0, 30,3000, False)
+   t = np.linspace(0, 30,3000, True)
    t = t[:filtered.size]
    fig, ax = plt.subplots()
    x = t.squeeze()
