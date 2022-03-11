@@ -40,7 +40,7 @@ def Data_Preprocess(x):
  return sig
 
 def Apply_Filter(sig):
-    sos = signal.butter(1, [0.1,10], 'band', fs=100, output='sos')
+    sos = signal.butter(1, [0.1,5], 'band', fs=100, output='sos')
     filtered = signal.sosfilt(sos, sig)
     # print ("Filtered data is ",filtered)
     return filtered.squeeze()
