@@ -56,8 +56,8 @@ def Plot_Graph(filtered):
    
 def Calculate_FFT(sig_data):
    N = 1500
-   yf = fft(sig_data[:1500])
-   xf = fftfreq(N, 0.01)
+   yf = rfft(sig_data[:1500])
+   xf = rfftfreq(N, 0.01)
    fig, ax = plt.subplots()
    ax.plot(xf,np.abs(yf))
 
