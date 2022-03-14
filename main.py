@@ -60,7 +60,7 @@ def Calculate_FFT(sig_data):
    xf = rfftfreq(N, 0.01)
    fig, ax = plt.subplots()
    ax.plot(xf,np.abs(yf))
-
+   plt.axis([0, 10, 0, 100000])
    st.pyplot(fig)
 
    #plt.plot(xf, yf)
