@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
-from scipy.fft import fftshift
+from scipy.fft import fftshift,fft, fftfreq
 import os
 import glob
 import json
@@ -14,6 +14,7 @@ import csv
 import pymysql
 import boto3
 import json
+
 
 # s3_client = boto3.client('s3')
 # response=s3_client.get_object(Bucket='trebirth1',Key='FB.json')
@@ -52,6 +53,16 @@ def Plot_Graph(filtered):
    fig, ax = plt.subplots()
    x = t.squeeze()
    line, = ax.plot(x, filtered.squeeze())
+   
+def Calculate_FFT(sig_data):
+   N = 1500
+   yf = fft(sig_data)
+   xf = fftfreq(N, 1 / 100)
+   plt.plot(xf, np.abs(yf))
+   plt.show()
+
+  # st.line_chart()
+
 
    #plt.plot(t.squeeze(),filtered.squeeze())
   # plt.suptitle('Filtered Scan Data')
@@ -94,9 +105,10 @@ if a == "Farm Information":
 
  st.write("Scan number is ", result1)
  st.line_chart(Filtered_data)
+ Calculate_FFT(NP_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
-
+ 
 
 
 #  if submit_button:
