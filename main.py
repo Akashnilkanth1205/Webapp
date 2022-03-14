@@ -55,11 +55,11 @@ def Plot_Graph(filtered):
    line, = ax.plot(x, filtered.squeeze())
    
 #def Calculate_FFT(sig_data):
-  # N = 1499
-   #yf = fft(sig_data)
-   #xf = fftfreq(N, 0.01)
-   #plt.plot(xf, yf)
-   #plt.show()
+   N = 1503
+   yf = fft(sig_data)
+   xf = fftfreq(N, 0.01)
+   plt.plot(xf, yf)
+   plt.show()
 
 
    #plt.plot(t.squeeze(),filtered.squeeze())
@@ -103,7 +103,7 @@ if a == "Farm Information":
 
  st.write("Scan number is ", result1)
  st.line_chart(Filtered_data)
- #Calculate_FFT(Np_result)
+ Calculate_FFT(Np_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
  
