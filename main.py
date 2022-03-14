@@ -58,7 +58,8 @@ def Calculate_FFT(sig_data):
    N = 1500
    yf = fft(sig_data)
    xf = fftfreq(N, 0.01)
-   st.line_chart(yf)
+   plt.plot(xf, np.abs(yf))
+   plt.show()
 
 
    #plt.plot(t.squeeze(),filtered.squeeze())
