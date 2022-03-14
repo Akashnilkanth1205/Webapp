@@ -54,7 +54,7 @@ def Plot_Graph(filtered):
    x = t.squeeze()
    line, = ax.plot(x, filtered.squeeze())
    
-#def Calculate_FFT(sig_data):
+def Calculate_FFT(sig_data):
    N = 1503
    yf = fft(sig_data)
    xf = fftfreq(N, 0.01)
