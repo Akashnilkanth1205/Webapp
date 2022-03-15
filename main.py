@@ -61,10 +61,10 @@ def Calculate_FFT(sig_data):
    fig, ax = plt.subplots()
    ax.plot(xf,np.abs(yf))
    plt.axis([0, 10, 0, 100000])
+   plt.suptitle('Fourier Transform of the Signal')
+   plt.xlabel("Frequency(Hz)")
+   plt.ylabel("Amplitude")
    st.pyplot(fig)
-   #plt.suptitle('Fourier Transform of the Signal')
-   #plt.xlabel("Frequency(Hz)")
-   #plt.ylabel("Amplitude")
    
 
    #plt.plot(xf, yf)
@@ -112,7 +112,6 @@ if a == "Farm Information":
 
  st.write("Scan number is ", result1)
  st.line_chart(Filtered_data)
- st.write("This is a test message!")
  Calculate_FFT(Np_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
