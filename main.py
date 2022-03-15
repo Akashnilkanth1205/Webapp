@@ -61,6 +61,9 @@ def Calculate_FFT(sig_data):
    fig, ax = plt.subplots()
    ax.plot(xf,np.abs(yf))
    plt.axis([0, 10, 0, 100000])
+   plt.suptitle('Fourier Transform of the Signal')
+   plt.xlabel("Frequency(Hz)")
+   plt.ylabel("Amplitude")
    st.pyplot(fig)
 
    #plt.plot(xf, yf)
