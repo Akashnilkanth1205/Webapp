@@ -56,10 +56,10 @@ def Plot_Graph(filtered):
    line, = ax.plot(x, filtered.squeeze())
    
    fig = go.Figure()
-   fig1.add_trace(go.Scatter(x=t, y=filtered,
+   fig.add_trace(go.Scatter(x=t, y=filtered,
                     mode='lines+markers',
                     name='Time Series'))
-   fig1.update_layout(title='Time Series',
+   fig.update_layout(title='Time Series',
                    xaxis_title='Time',
                    yaxis_title='Amplitude')
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
