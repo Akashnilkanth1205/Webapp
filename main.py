@@ -55,18 +55,29 @@ def Plot_Graph(filtered):
    x = t.squeeze()
    line, = ax.plot(x, filtered.squeeze())
    
+   fig = go.Figure()
+   fig1.add_trace(go.Scatter(x=t, y=filtered,
+                    mode='lines+markers',
+                    name='Time Series'))
+   fig1.update_layout(title='Time Series',
+                   xaxis_title='Time',
+                   yaxis_title='Amplitude')
+   st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
+   
+   
+   
 def Calculate_FFT(sig_data):
    N = 1500
    yf = rfft(sig_data[:1500])
    xf = rfftfreq(N, 0.01)
-   fig, ax = plt.subplots()
-   ax.plot(xf,np.abs(yf))
-   ax.grid()
-   plt.axis([0, 10, 0, 100000])
+  # fig, ax = plt.subplots()
+   #ax.plot(xf,np.abs(yf))
+   #ax.grid()
+   #plt.axis([0, 10, 0, 100000])
    #plt.suptitle('Fourier Transform of the Signal')
-   plt.xlabel("Frequency(Hz)")
-   plt.ylabel("Amplitude")
-   st.pyplot(fig)
+   #plt.xlabel("Frequency(Hz)")
+   #plt.ylabel("Amplitude")
+   #st.pyplot(fig)
    
    fig1 = go.Figure()
    fig1.add_trace(go.Scatter(x=xf, y=np.abs(yf),
@@ -91,6 +102,7 @@ Data = Data_Preprocess(dict_json)
 # print("Data is ",Data)
 Filtered_data = Apply_Filter(Data)
 # print(Filtered_data)
+st.write("Scan number is ", result1)
 Plot_Graph(Filtered_data)
 print(Filtered_data)
 # plt.show()
@@ -121,8 +133,8 @@ if a == "Farm Information":
 #  """
 #   )
 
- st.write("Scan number is ", result1)
- st.line_chart(Filtered_data)
+ 
+ #st.line_chart(Filtered_data)
  Calculate_FFT(Np_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
