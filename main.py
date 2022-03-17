@@ -66,7 +66,7 @@ def Plot_Graph(filtered):
                    yaxis_title='Amplitude')
    st.plotly_chart(fig, use_container_width=True, sharing="streamlit")   
    
-   fig = px.scatter(x=t, y=filtered, labels={'x':'t', 'y':'sin(t)'})
+   fig = px.line(x=t, y=filtered, labels={'x':'Time', 'y':'Amplitude'})
    st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
 
    
