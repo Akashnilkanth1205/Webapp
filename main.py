@@ -59,7 +59,7 @@ def Plot_Graph(filtered):
    fig.add_trace(go.Scatter(x=t, y=filtered,
                     mode='lines',
                     name='Time Series',
-                    line=dict(color='firebrick', width=2)))
+                    line=dict(color='country', width=2)))
    fig.update_layout(title='Time Series',
                    xaxis_title='Time',
                    yaxis_title='Amplitude')
@@ -87,7 +87,7 @@ def Calculate_FFT(sig_data):
    fig1.update_layout(title='Fourier Transform',
                    xaxis_title='Frequency(Hz)',
                    yaxis_title='Amplitude')
-   st.plotly_chart(fig1, use_container_width=False, sharing="streamlit")   
+   st.plotly_chart(fig1, use_container_width=True, sharing="streamlit")   
    
 
    #plt.plot(xf, yf)
