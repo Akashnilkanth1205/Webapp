@@ -60,6 +60,7 @@ def Calculate_FFT(sig_data):
    xf = rfftfreq(N, 0.01)
    fig, ax = plt.subplots()
    ax.plot(xf,np.abs(yf))
+   ax.grid()
    plt.axis([0, 10, 0, 100000])
    #plt.suptitle('Fourier Transform of the Signal')
    plt.xlabel("Frequency(Hz)")
