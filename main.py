@@ -113,7 +113,7 @@ if a == "Farm Information":
 #  """
 #   )
  st.subheader(f'Scan number is: {result1}')
- st.write("Scan number is ", result1)
+ #st.write("Scan number is ", result1)
  Plot_Graph(Filtered_data)
  print(Filtered_data) 
  #st.line_chart(Filtered_data)
