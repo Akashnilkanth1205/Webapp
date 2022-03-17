@@ -68,13 +68,11 @@ def Calculate_FFT(sig_data):
    plt.ylabel("Amplitude")
    st.pyplot(fig)
    
-   fig = go.Figure()
-   fig.add_trace(go.Scatter(x=xf, y=np.abs(yf),
+   fig1 = go.Figure()
+   fig1.add_trace(go.Scatter(x=xf, y=np.abs(yf),
                     mode='lines+markers',
                     name='FFT'))
-   
-   fig.show()
-   
+   st.plotly_chart(fig1, use_container_width=False, sharing="streamlit")   
    
 
    #plt.plot(xf, yf)
