@@ -2,6 +2,7 @@ import streamlit as st
 from firebase import  firebase
 from scipy import signal
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 import numpy as np
 import os
 import pandas as pd
@@ -66,6 +67,14 @@ def Calculate_FFT(sig_data):
    plt.xlabel("Frequency(Hz)")
    plt.ylabel("Amplitude")
    st.pyplot(fig)
+   
+   fig = go.Figure()
+   fig.add_trace(go.Scatter(x=xf, y=np.abs(yf),
+                    mode='lines+markers',
+                    name='FFT'))
+   
+   fig.show()
+   
    
 
    #plt.plot(xf, yf)
