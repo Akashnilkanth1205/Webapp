@@ -52,21 +52,7 @@ def Apply_Filter(sig):
 def Plot_Graph(filtered):
    t = np.linspace(0, 30,3000, False)
    t = t[:filtered.size]
-   fig, ax = plt.subplots()
-   x = t.squeeze()
-   line, = ax.plot(x, filtered.squeeze())
-   
-   fig = go.Figure()
-   fig.add_trace(go.Scatter(x=t, y=filtered,
-                    mode='lines',
-                    name='Time Series',
-                    line=dict(color='DarkTurquoise', width=2)))
-   fig.update_layout(title='Time Series',
-                   xaxis_title='Time',
-                   yaxis_title='Amplitude')
-   st.plotly_chart(fig, use_container_width=True, sharing="streamlit")   
-   
-   fig = px.line(x=t, y=filtered, labels={'x':'Time', 'y':'Amplitude'})
+   fig = px.line(x=t, y=filtered, labels={'x':'Time', 'y':'Amplitude'},title='Time Series')
    st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
 
    
