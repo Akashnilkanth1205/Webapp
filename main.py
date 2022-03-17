@@ -57,12 +57,12 @@ def Plot_Graph(filtered):
    
    fig = go.Figure()
    fig.add_trace(go.Scatter(x=t, y=filtered,
-                    mode='lines+markers',
+                    mode='lines',
                     name='Time Series'))
    fig.update_layout(title='Time Series',
                    xaxis_title='Time',
                    yaxis_title='Amplitude')
-   st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
+   st.plotly_chart(fig, use_container_width=True, sharing="streamlit")   
    
    
    
@@ -102,9 +102,6 @@ Data = Data_Preprocess(dict_json)
 # print("Data is ",Data)
 Filtered_data = Apply_Filter(Data)
 # print(Filtered_data)
-st.write("Scan number is ", result1)
-Plot_Graph(Filtered_data)
-print(Filtered_data)
 # plt.show()
 plt.savefig("output.jpg")
 
@@ -133,7 +130,9 @@ if a == "Farm Information":
 #  """
 #   )
 
- 
+ st.write("Scan number is ", result1)
+ Plot_Graph(Filtered_data)
+ print(Filtered_data) 
  #st.line_chart(Filtered_data)
  Calculate_FFT(Np_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
