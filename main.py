@@ -80,7 +80,8 @@ def Calculate_FFT(sig_data):
                    yaxis_title='Amplitude')
    st.plotly_chart(fig1, use_container_width=True, sharing="streamlit")   
    
-
+   fig = px.line(x=xf, y=np.abs(yf), labels={'x':'Frequency(Hz)', 'y':'Amplitude'},title='Fourier Transform', width = 1000, height = 600)
+   st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
    #plt.plot(xf, yf)
    #plt.show()
 
