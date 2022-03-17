@@ -58,7 +58,8 @@ def Plot_Graph(filtered):
    fig = go.Figure()
    fig.add_trace(go.Scatter(x=t, y=filtered,
                     mode='lines',
-                    name='Time Series'))
+                    name='Time Series',
+                    line=dict(color='firebrick', width=2)))
    fig.update_layout(title='Time Series',
                    xaxis_title='Time',
                    yaxis_title='Amplitude')
