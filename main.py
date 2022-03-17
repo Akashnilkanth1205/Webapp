@@ -2,7 +2,8 @@ import streamlit as st
 from firebase import  firebase
 from scipy import signal
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
+import plotly.express as px
 import numpy as np
 import os
 import pandas as pd
@@ -65,6 +66,10 @@ def Plot_Graph(filtered):
                    xaxis_title='Time',
                    yaxis_title='Amplitude')
    st.plotly_chart(fig, use_container_width=True, sharing="streamlit")   
+   
+   fig = px.line(filtered,t, x='year', y='lifeExp', color='country', markers=True)
+   st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
+
    
    
    
