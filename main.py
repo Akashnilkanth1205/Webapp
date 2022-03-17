@@ -52,7 +52,7 @@ def Apply_Filter(sig):
 def Plot_Graph(filtered):
    t = np.linspace(0, 30,3000, False)
    t = t[:filtered.size]
-   fig = px.line(x=t, y=filtered, labels={'x':'Time', 'y':'Amplitude'},title='Time Series', width = 1000, height = 600)
+   fig = px.line(x=t, y=filtered, labels={'x':'Time', 'y':'Amplitude'},color = 'country',title='Time Series', width = 1000, height = 600)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
 
    
